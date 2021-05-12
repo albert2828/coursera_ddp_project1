@@ -10,11 +10,31 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
-## Map
-```{r}
+## Some of the Most Important Archaeological Zones in Mexico
+```{r, include=F}
 library(leaflet)
-my_map <- leaflet() %>%
-            addTiles()
-my_map
+```
+
+Today's Date:
+```{r}
+Sys.time()
+```
+
+```{r}
+zones <- data.frame(lat=c(19.692273, 17.4837193984, 16.7023971904, 16.9007280637,
+                          20.21173 ), 
+                    long = c(-98.843504, -92.0411311688, -91.058999764, -92.0058049768, 
+                             -87.46325))
+zone_names <- c("<a href='https://www.inah.gob.mx/zonas/23-zona-arqueologica-de-teotihuacan'> Teotihuacan </a>",
+                "<a href='https://www.inah.gob.mx/zonas/163-zona-arqueologica-palenque'> Palenque </a>", 
+                "<a href='https://www.inah.gob.mx/zonas/31-zona-arqueologica-de-bonampak'> Bonampak </a>", 
+                "<a href='https://www.inah.gob.mx/zonas/29-zona-arqueologica-de-tonina'> Toniná </a>", 
+                "<a href='https://www.inah.gob.mx/zonas/99-zona-arqueologica-de-tulum'> Tulum </a>")
+mexico_map <- zones %>% 
+            leaflet() %>%
+            addTiles() %>%
+            addMarkers(popup = zone_names)
+mexico_map
+
 ```
 
