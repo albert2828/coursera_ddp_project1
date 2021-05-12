@@ -20,7 +20,7 @@ Today's Date:
 Sys.time()
 ```
 
-```{r}
+```{r, fig.width=5, fig.align='center', fig.cap="Archeological Zones"}
 zones <- data.frame(lat=c(19.692273, 17.4837193984, 16.7023971904, 16.9007280637,
                           20.21173 ), 
                     long = c(-98.843504, -92.0411311688, -91.058999764, -92.0058049768, 
